@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Breast Cancer Prediction</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <h1>Breast Cancer Prediction</h1>
+    <form id="prediction_form">
+        {% csrf_token %}
+        <label for="radius_mean">Radius Mean:</label>
+        <input type="text" id="radius_mean" name="radius_mean" required><br>
+
+        <label for="texture_mean">Texture Mean:</label>
+        <input type="text" id="texture_mean" name="texture_mean" required><br>
+
+        <!-- Add other input fields for the remaining attributes -->
+
+        <input type="button" value="Predict" onclick="predictCancer()">
+    </form>
+
+    <div id="prediction_result">
+        <!-- The prediction result will be shown here -->
+    </div>
+
+    <script>
+        function predictCancer() {
+            // Get the user input for each attribute
+            var radius_mean = $("#radius_mean").val();
+            var texture_mean = $("#texture_mean").val();
+            // Add more variables for the remaining attributes
+
+            // Send the AJAX request to the server
+            $.ajax({
+                type: "POST",
+                url: "{% url 'predict_breast_cancer' %}",
+                data: {
+                    radius_mean: radius_mean,
+                    texture_mean: texture_mean,
+                    // Include other attributes here
+                    csrfmiddlewaretoken: '{{ csrf_token }}'
+                },
+                success: function(response) {
+                    // Update the prediction result on the page
+                    $("#prediction_result").html("The predicted outcome is: " + response.prediction);
+                },
+                error: function(xhr, status, error) {
+                    console.log("Error:", error);
+                }
+            });
+        }
+    </script>
+</body>
+</html>
