@@ -14,6 +14,89 @@
         <label for="texture_mean">Texture Mean:</label>
         <input type="text" id="texture_mean" name="texture_mean" required><br>
 
+        <label for="perimeter_mean">perimeter Mean:</label>
+        <input type="text" id="perimeter_mean" name="perimeter_mean" required><br>
+
+        <label for="area_mean">area Mean:</label>
+        <input type="text" id="area_mean" name="area_mean" required><br>
+
+        <label for="smoothness_mean">smoothness Mean:</label>
+        <input type="text" id="smoothness_mean" name="smoothness_mean" required><br>
+
+        <label for="compactness_mean">Texture Mean:</label>
+        <input type="text" id="compactness_mean" name="compactness_mean" required><br>
+
+        <label for="concavity_mean">Texture Mean:</label>
+        <input type="text" id="concavity_mean" name="concavity_mean" required><br>
+
+        <label for="concave_points_mean">Texture Mean:</label>
+        <input type="text" id="concave_points_mean" name="concave_points_mean" required><br>
+        
+        <label for="symmetry_mean">Texture Mean:</label>
+        <input type="text" id="symmetry_mean" name="symmetry_mean" required><br>
+
+        <label for="fractal_dimension_mean">Texture Mean:</label>
+        <input type="text" id="fractal_dimension_mean" name="fractal_dimension_mean" required><br>
+
+        <label for="radius_se">Texture Mean:</label>
+        <input type="text" id="radius_se" name="radius_se" required><br>
+
+        <label for="texture_se">Texture Mean:</label>
+        <input type="text" id="texture_se" name="texture_se" required><br>
+
+        <label for="perimeter_se">Texture Mean:</label>
+        <input type="text" id="perimeter_se" name="perimeter_se" required><br>
+        
+        <label for="area_se">Texture Mean:</label>
+        <input type="text" id="area_se" name="area_se" required><br>
+
+        <label for="smoothness_se">Texture Mean:</label>
+        <input type="text" id="smoothness_se" name="smoothness_se" required><br>
+        
+        <label for="compactness_se">Texture Mean:</label>
+        <input type="text" id="compactness_se" name="compactness_se" required><br>
+
+        <label for="concavity_se">Texture Mean:</label>
+        <input type="text" id="concavity_se" name="concavity_se" required><br>
+
+        <label for="concave_points_se">Texture Mean:</label>
+        <input type="text" id="concave_points_se" name="concave_points_se" required><br>
+
+        <label for="symmetry_se">Texture Mean:</label>
+        <input type="text" id="symmetry_se" name="symmetry_se" required><br>
+
+        <label for="fractal_dimension_se">Texture Mean:</label>
+        <input type="text" id="fractal_dimension_se" name="fractal_dimension_se" required><br>
+
+        <label for="radius_worst">Texture Mean:</label>
+        <input type="text" id="radius_worst" name="radius_worst" required><br>
+
+        <label for="texture_worst">Texture Mean:</label>
+        <input type="text" id="texture_worst" name="texture_worst" required><br>
+
+        <label for="perimeter_worst">Texture Mean:</label>
+        <input type="text" id="perimeter_worst" name="perimeter_worst" required><br>
+
+        <label for="smoothness_worst">Texture Mean:</label>
+        <input type="text" id="smoothness_worst" name="smoothness_worst" required><br>
+
+        <label for="compactness_worst">Texture Mean:</label>
+        <input type="text" id="compactness_worst" name="compactness_worst" required><br>
+
+        <label for="concavity_worst">Texture Mean:</label>
+        <input type="text" id="concavity_worst" name="concavity_worst" required><br>
+
+        <label for="concave_points_worst">Texture Mean:</label>
+        <input type="text" id="concave_points_worst" name="concave_points_worst" required><br>
+
+        <label for="symmetry_worst">Texture Mean:</label>
+        <input type="text" id="symmetry_worst" name="symmetry_worst" required><br>
+
+        <label for="fractal_dimension_worst">Texture Mean:</label>
+        <input type="text" id="fractal_dimension_worst" name="fractal_dimension_worst" required><br>
+      
+
+
         <!-- Add other input fields for the remaining attributes -->
 
         <input type="button" value="Predict" onclick="predictCancer()">
@@ -28,6 +111,34 @@
             // Get the user input for each attribute
             var radius_mean = $("#radius_mean").val();
             var texture_mean = $("#texture_mean").val();
+            var perimeter_mean = $("#perimeter_mean").val();
+            var area_mean = $("#area_mean").val();
+            var smoothness_mean = $("#smoothness_mean").val();
+            var compactness_mean = $("#compactness_mean").val();
+            var concavity_mean = $("#concavity_mean").val();
+            var concave_points_mean = $("#concave_points_mean").val();
+            var symmetry_mean = $("#symmetry_mean").val();
+            var fractal_dimension_mean = $("#fractal_dimension_mean").val();
+            var radius_se = $("#radius_se").val();
+            var texture_se = $("#texture_se").val();
+            var perimeter_se = $("#perimeter_se").val();
+            var area_se = $("#area_se").val();
+            var smoothness_se = $("#smoothness_se").val();
+            var compactness_se = $("#compactness_se").val();
+            var concavity_se = $("#concavity_se").val();
+            var concave_points_se = $("#concave_points_se").val();
+            var fractal_dimension_se = $("#fractal_dimension_se").val();
+            var radius_worst = $("#radius_worst").val();
+            var texture_worst = $("#texture_worst").val();
+            var perimeter_worst = $("#perimeter_worst").val();
+            var area_worst = $("#area_worst").val();
+            var smoothness_worst = $("#smoothness_worst").val();
+            var compactness_worst = $("#compactness_worst").val();
+            var concavity_worst = $("#concavity_worst").val();
+            var concave_points_worst = $("#concave_points_worst").val();
+            var symmetry_worst = $("#symmetry_worst").val();
+            var fractal_dimension_worst = $("#fractal_dimension_worst").val();
+
             // Add more variables for the remaining attributes
 
             // Send the AJAX request to the server
@@ -37,12 +148,39 @@
                 data: {
                     radius_mean: radius_mean,
                     texture_mean: texture_mean,
+                    perimeter_mean:perimeter_mean,
+                    area_mean:area_mean,
+                    smoothness_mean:smoothness_mean,
+                    compactness_mean:compactness_mean,
+                    concavity_mean:concavity_mean,
+                    concave_points_mean:concave_points_mean,
+                    symmetry_mean:symmetry_mean,
+                    fractal_dimension_mean:fractal_dimension_mean,
+                    radius_se:radius_se,
+                    texture_se:texture_se,
+                    perimeter_se:perimeter_se,
+                    area_se:area_se,
+                    smoothness_se:smoothness_se,
+                    compactness_se:compactness_se,
+                    concavity_se:concavity_se,
+                    concave_points_se:concave_points_se,
+                    fractal_dimension_se:fractal_dimension_se,
+                    radius_worst:radius_worst,
+                    texture_worst:texture_worst,
+                    perimeter_worst:perimeter_worst,
+                    area_worst:area_worst,
+                    smoothness_worst:smoothness_worst,
+                    compactness_worst:compactness_worst,
+                    concavity_worst:concavity_worst,
+                    concave_points_worst:concave_points_worst,
+                    symmetry_worst:symmetry_worst,
+                    fractal_dimension_worst:fractal_dimension_worst,
                     // Include other attributes here
                     csrfmiddlewaretoken: '{{ csrf_token }}'
                 },
                 success: function(response) {
                     // Update the prediction result on the page
-                    $("#prediction_result").html("The predicted outcome is: " + response.prediction);
+                    $("#prediction_result").html("The predicted outcome is: " + response);
                 },
                 error: function(xhr, status, error) {
                     console.log("Error:", error);
